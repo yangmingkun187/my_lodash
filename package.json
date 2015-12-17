@@ -1,0 +1,19 @@
+{
+  "name": "my_lodash",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yangmingkun187/my_lodash.git"
+  },
+  "author": "jasonyang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yangmingkun187/my_lodash/issues"
+  },
+  "homepage": "https://github.com/yangmingkun187/my_lodash#readme"
+}
