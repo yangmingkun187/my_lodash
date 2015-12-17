@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "istanbul cover _mocha ./test/**"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/yangmingkun187/my_lodash/issues"
   },
-  "homepage": "https://github.com/yangmingkun187/my_lodash#readme"
+  "homepage": "https://github.com/yangmingkun187/my_lodash#readme",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "istanbul": "^0.4.1",
+    "mocha": "^2.3.4",
+    "sinon": "^1.17.2",
+    "sinon-chai": "^2.8.0"
+  }
 }
