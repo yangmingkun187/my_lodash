@@ -74,11 +74,49 @@ describe('array', function() {
     });
 
     it('should be return max item of array', function() {
-      array = [{name:'yang',age:18},{name:'ming',age:23},{name:'yang',age:20}];
+      array = [{name:'ming',age:23},{name:'yang',age:18},{name:'yang',age:20}];
 
       var result = _.max(array, 'age');
 
       expect(result).to.deep.equal({name:'ming',age:23});
     });
   });
+
+
+  describe('min test', function() {
+    it('should be return min num of array', function() {
+      array = [1,8,3,6,5,2];
+
+      var result = _.min(array);
+
+      expect(result).to.equal(1);
+    });
+
+    it('should be return min of array', function() {
+      array = ['5','1','8','2'];
+
+      var result = _.min(array);
+
+      expect(result).to.equal(1);
+    });
+
+    it('should be return min value of array', function() {
+      array = [{name:'yang',age:18},{name:'ming',age:23},{name:'yang',age:20}];
+
+      var result = _.min(array, function(item) {
+          return item.age;
+      });
+
+      expect(result).to.deep.equal({name:'yang',age:18});
+    });
+
+    it('should be return min item of array', function() {
+      array = [{name:'ming',age:23},{name:'yang',age:18},{name:'yang',age:20}];
+
+      var result = _.min(array, 'age');
+
+      expect(result).to.deep.equal({name:'yang',age:18});
+    });
+  });
+
 });
