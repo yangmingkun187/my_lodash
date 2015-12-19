@@ -85,7 +85,7 @@ Array.filter = function(array, callback) {
       }
     }
   } else {
-    resultArray = array;
+    throw "element two should be a function";
   }
   return resultArray;
 }

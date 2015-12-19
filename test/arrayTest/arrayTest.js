@@ -74,7 +74,7 @@ describe('array', function() {
     });
 
     it('should be return max item of array', function() {
-      array = [{name:'ming',age:23},{name:'yang',age:18},{name:'yang',age:20}];
+      array = [{name:'yang',age:18},{name:'ming',age:23},{name:'yang',age:20}];
 
       var result = _.max(array, 'age');
 
@@ -101,7 +101,7 @@ describe('array', function() {
     });
 
     it('should be return min value of array', function() {
-      array = [{name:'yang',age:18},{name:'ming',age:23},{name:'yang',age:20}];
+      array = [{name:'ming',age:23},{name:'yang',age:18},{name:'yang',age:20}];
 
       var result = _.min(array, function(item) {
           return item.age;
@@ -123,13 +123,13 @@ describe('array', function() {
     it('should be return filter result', function() {
       array = [1,5,3,6,9];
       var resultArray = _.filter(array, function(item) {
-        return item > 5
+        return item > 5;
       })
 
       expect(resultArray).to.deep.equal([6,9]);
     });
 
-    it('should be return isEqual', function() {
+    it('should be return filter result', function() {
       array = [{name:'yang',age:18},{name:'ming',age:23},{name:'yang',age:20}];
       var testArray = _.filter(array, function(item) {
         return item.age > 20;
@@ -138,7 +138,7 @@ describe('array', function() {
       expect(testArray).to.deep.equal([{name:'ming',age:23}]);
     });
 
-    it('should be return isEqual', function() {
+    it('should be return filter result', function() {
       array = [{
         name:'yang',
         age:18,
