@@ -119,4 +119,48 @@ describe('array', function() {
     });
   });
 
+  describe('filter test', function() {
+    it('should be return filter result', function() {
+      array = [1,5,3,6,9];
+      var resultArray = _.filter(array, function(item) {
+        return item > 5
+      })
+
+      expect(resultArray).to.deep.equal([6,9]);
+    });
+
+    it('should be return isEqual', function() {
+      array = [{name:'yang',age:18},{name:'ming',age:23},{name:'yang',age:20}];
+      var testArray = _.filter(array, function(item) {
+        return item.age > 20;
+      })
+
+      expect(testArray).to.deep.equal([{name:'ming',age:23}]);
+    });
+
+    it('should be return isEqual', function() {
+      array = [{
+        name:'yang',
+        age:18,
+        skills:['js','mocha',{
+          front: 'css'
+        }]
+      },{
+        name:'ming',
+        age:23,
+        skills:['angular','jquery','zepto']
+      }];
+      var resultArray = _.filter(array, function(item) {
+        return item.skills[0] === 'angular';
+      });
+
+      expect(resultArray).to.deep.equal([{
+        name:'ming',
+        age:23,
+        skills:['angular','jquery','zepto']
+      }]);
+    });
+  });
+
+
 });

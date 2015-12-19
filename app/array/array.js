@@ -74,4 +74,20 @@ Array.min = function(array,callback) {
   return min;
 }
 
+Array.filter = function(array, callback) {
+  var resultArray = [];
+  if(typeof callback === "function") {
+
+    for(var i = 0, len = array.length; i < len; i++) {
+
+      if(callback(array[i])) {
+        resultArray.push(array[i]);
+      }
+    }
+  } else {
+    resultArray = array;
+  }
+  return resultArray;
+}
+
 module.exports = Array;
