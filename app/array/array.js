@@ -90,4 +90,26 @@ Array.filter = function(array, callback) {
   return resultArray;
 }
 
+Array.remove = function(array,callback) {
+  var removeArray = [];
+  var indexArray = [];
+  var len = array.length;
+  // 得到remove掉的值
+  for (var i = 0; i < len; i++) {
+    if (callback(array[i])) {
+      removeArray.push(array[i]);
+      indexArray.push(i);
+    }
+  }
+  // 更新原数组
+  if(indexArray.length <= 0) {
+    array.splice(indexArray[0],1);
+  } else {
+    for (var j = 0; j < indexArray.length; j++) {
+        array.splice(indexArray[j]-j,1);
+    }
+  }
+  return removeArray;
+}
+
 module.exports = Array;

@@ -119,6 +119,7 @@ describe('array', function() {
     });
   });
 
+
   describe('filter test', function() {
     it('should be return filter result', function() {
       array = [1,5,3,6,9];
@@ -163,4 +164,23 @@ describe('array', function() {
   });
 
 
+  describe('remove test', function() {
+    it('should be return remove result', function() {
+      array = [1,2,3,4,5,6];
+      var resultArray = _.remove(array, function(item) {
+        return item % 3 == 0;
+      })
+      expect(array).to.deep.equal([1,2,4,5]);
+      expect(resultArray).to.deep.equal([3,6]);
+    });
+
+    it('should be return remove result', function() {
+      array = [{name:'yang',age:18},{name:'ming',age:23},{name:'yang',age:20}];
+      var removeArray = _.remove(array, function(item) {
+        return item['age'] > 20;
+      });
+      expect(array).to.deep.equal([{name:'yang',age:18},{name:'yang',age:20}]);
+      expect(removeArray).to.deep.equal([{name:'ming',age:23}]);
+    });
+  });
 });
